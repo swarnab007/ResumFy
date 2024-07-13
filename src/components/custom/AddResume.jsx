@@ -13,14 +13,17 @@ import { Button } from "../ui/button";
 import { v4 as uuidv4 } from "uuid";
 import { createResume } from "../../../services/GlobalApi.js";
 import { useUser } from "@clerk/clerk-react";
+import { useNavigate } from "react-router-dom";
 
 const AddResume = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [resumeTitle, setResumeTitle] = React.useState("");
   const { user } = useUser();
   const [loading, setLoading] = React.useState(false);
+  const navigate = useNavigate();
 
   const onCreate = () => {
+    setLoading(true); // Set loading to true when the creation starts
     const id = uuidv4();
     console.log(resumeTitle, id);
     console.log(user);
@@ -37,14 +40,14 @@ const AddResume = () => {
     // Call the createResume function from GlobalApi.js
     createResume(data)
       .then((res) => {
-        console.log(res);
-
-        if (!res) {
-          setLoading(true);
-        }
+        console.log(res.data.data);
+        setLoading(false); // Set loading to false when the creation is done
+        setIsOpen(false); // Close the dialog if the creation is successful
+        navigate(`/resume/${id}/edit`)
       })
       .catch((err) => {
         console.log(err);
+        setLoading(false); // Set loading to false if there's an error
       });
   };
 
@@ -52,7 +55,7 @@ const AddResume = () => {
     <div className="mt-4">
       <div
         onClick={() => setIsOpen(true)}
-        className="p-14 py-14 border flex items-center justify-center bg-gray-200 
+        className="p-14 py-14 border-dashed flex items-center justify-center bg-gray-200
           rounded-lg h-[280px] sm:h-auto hover:scale-105 cursor-pointer transition-all hover:shadow-md"
       >
         <PlusIcon className="w-8 h-8" />
