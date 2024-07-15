@@ -7,7 +7,7 @@ const PersonalDetailsPreview = ({ resumeInfo }) => {
         style={{ color: resumeInfo?.themeColor }}
         className="text-2xl text-center font-extrabold mb-1"
       >
-        {resumeInfo?.name}
+        {resumeInfo?.firstname} {resumeInfo?.lastname}
       </h2>
       <h3 className="text-center text-lg font-bold mb-1">
         {resumeInfo?.title}

@@ -1,6 +1,6 @@
-
 export const resumeData = {
-  name: "John Doe",
+  firstname: "John",
+  lastname: "Doe",
   title: "Backend Developer",
   phone: "+1234567890",
   email: "john.doe@example.com",
@@ -8,14 +8,33 @@ export const resumeData = {
   linkedin: "https://www.linkedin.com/in/johndoe",
   github: "https://github.com/johndoe",
   skills: [
-    "JavaScript",
-    "React",
-    "Node.js",
-    "CSS",
-    "HTML",
-    "Tailwind CSS",
-    "Python",
+    {
+      id: 1,
+      name: "HTML",
+      rating: 9,
+    },
+    {
+      id: 2,
+      name: "CSS",
+      rating: 8,
+    },
+    {
+      id: 3,
+      name: "JavaScript",
+      rating: 9.5,
+    },
+    {
+      id: 4,
+      name: "Tailwind CSS",
+      rating: 8.5,
+    },
+    {
+      id: 5,
+      name: "React",
+      rating: 9.2,
+    },
   ],
+
   education: [
     {
       degree: "Bachelor of Science in Computer Science",
