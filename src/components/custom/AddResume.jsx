@@ -34,6 +34,14 @@ const AddResume = () => {
         resumeID: id,
         userName: user?.fullName,
         resumeEmail: user?.primaryEmailAddress.emailAddress,
+        title: "",
+        firstname: "",
+        lastname: "",
+        phone: "",
+        email: "",
+        address: "",
+        linkedin: "",
+        github: "",
       },
     };
 
@@ -43,7 +51,7 @@ const AddResume = () => {
         console.log(res.data.data);
         setLoading(false); // Set loading to false when the creation is done
         setIsOpen(false); // Close the dialog if the creation is successful
-        navigate(`/resume/${id}/edit`)
+        navigate(`/dashboard/resume/${res.data.data.id}/edit`)
       })
       .catch((err) => {
         console.log(err);

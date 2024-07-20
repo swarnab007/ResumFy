@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom"; // Ensure you're using react-router-dom's Link
+import { Link } from "react-router-dom"; 
 import React from "react";
 
 const ResumeCard = ({ resume, index }) => {
   console.log("Resume:", resume, "Index:", index);
   return (
-    <Link to={`/dashboard/resume/${resume.attributes.resumeID}/edit`}>
+    <Link to={`/dashboard/resume/${resume?.id}/edit`}>
       <div className="p-6 border border-blue-700 rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out transform hover:scale-105 cursor-pointer">
         <h3 className="text-xl font-semibold text-teal-700 mb-2">
           {resume.attributes.resumeTitle}

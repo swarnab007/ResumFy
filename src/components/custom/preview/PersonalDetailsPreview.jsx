@@ -1,6 +1,7 @@
 import React from "react";
 
 const PersonalDetailsPreview = ({ resumeInfo }) => {
+  console.log(resumeInfo?.firstname);
   return (
     <div className="personal-details p-2">
       <h2

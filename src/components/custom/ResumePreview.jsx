@@ -10,7 +10,7 @@ import SkillPreview from "./SkillPreview.jsx";
 const ResumePreview = () => {
   const { resumeInfo, setResumeInfo } = useContext(ResumeContext);
 
-  console.log(resumeInfo);
+  // console.log(resumeInfo);
 
   return (
     <div
