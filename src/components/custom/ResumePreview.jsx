@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import PersonalDetailsPreview from "./preview/PersonalDetailsPreview.jsx";
-
 import { ResumeContext } from "@/context/resumeContext.jsx";
 import AboutPreview from "./preview/AboutPreview.jsx";
 import ExperiencePreview from "./preview/ExperiencePreview.jsx";
@@ -9,7 +8,6 @@ import SkillPreview from "./SkillPreview.jsx";
 
 const ResumePreview = () => {
   const { resumeInfo, setResumeInfo } = useContext(ResumeContext);
-
   // console.log(resumeInfo);
 
   return (

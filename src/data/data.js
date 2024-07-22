@@ -91,6 +91,6 @@ export const resumeData = {
     },
   ],
   themeColor: "#4CAF50",
-  summary:
+  about:
     "A highly motivated and experienced front-end developer with a passion for creating dynamic and user-friendly web applications. Skilled in various web technologies and always eager to learn and take on new challenges.",
 };

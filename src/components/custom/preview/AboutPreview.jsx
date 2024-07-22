@@ -8,7 +8,7 @@ const AboutPreview = ({ resumeInfo }) => {
         style={{ borderColor: resumeInfo?.themeColor }}
       ></div>
       <div className="mt-3">
-        <p className="text-sm font-medium">{resumeInfo?.summary}</p>
+        <p className="text-sm font-medium">{resumeInfo?.about}</p>
       </div>
     </div>
   );

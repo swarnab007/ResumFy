@@ -17,6 +17,10 @@ export const createResume = (data) => instance.post("/user-resumes", data);
 export const getAllResumes = (email) =>
   instance.get("/user-resumes?filters[resumeEmail][$eq]=" + email);
 
+// Get single Resume by ID
+export const getResume = (id) => 
+  instance.get("/user-resumes/"+id);
+
 // Save the personal details
 export const savePersonalDetails = (id, data) =>
   instance.put('/user-resumes/'+id, data);  // Updated endpoint

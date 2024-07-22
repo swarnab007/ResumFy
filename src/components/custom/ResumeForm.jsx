@@ -11,7 +11,7 @@ import SkillsForm from "./form/SkillsForm.jsx";
 const ResumeForm = () => {
   const { resumeInfo, setResumeInfo } = useContext(ResumeContext);
   const [index, setIndex] = useState(1);
-  
+
   return (
     <div className="p-4">
       <div className="flex justify-between">
@@ -49,7 +49,9 @@ const ResumeForm = () => {
           />
         )}
         {/* About Form */}
-        {index === 2 && <AboutForm />}
+        {index === 2 && (
+          <AboutForm resumeInfo={resumeInfo} setResumeInfo={setResumeInfo} />
+        )}
         {/* Experience form */}
         {index === 3 && <ExperienceForm />}
         {/* Education Form */}

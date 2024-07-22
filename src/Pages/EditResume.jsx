@@ -11,7 +11,7 @@ const EditResume = () => {
 
   useEffect(() => {
     setResumeInfo(resumeData);
-  }, []); 
+  }, []);
 
   // console.log(resumeInfo);
 
