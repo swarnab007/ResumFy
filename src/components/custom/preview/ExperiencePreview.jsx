@@ -2,12 +2,13 @@ import React from "react";
 import Loader from "../Loader";
 
 const ExperiencePreview = ({ resumeInfo }) => {
-  if (!resumeInfo || !resumeInfo.experience)
+  if (!resumeInfo || !resumeInfo.experience) {
     return (
       <div>
         <Loader />
       </div>
     );
+  }
 
   return (
     <div className="experience-preview">
@@ -19,7 +20,7 @@ const ExperiencePreview = ({ resumeInfo }) => {
       </h3>
       <div
         className="border-t-2 mb-4"
-        style={{ borderColor: resumeInfo.themeColor }}
+        style={{ borderColor: resumeInfo?.themeColor }}
       ></div>
       {resumeInfo.experience.map((e) => (
         <div key={e.id} className="mb-4">
@@ -33,13 +34,12 @@ const ExperiencePreview = ({ resumeInfo }) => {
             <p className="font-md text-sm font-medium">{e.company}</p>
             <p className="text-sm">{`${e.startDate} - ${e.endDate}`}</p>
           </div>
-          <ul className="list-disc list-inside ml-4 mt-1">
-            {e.responsibilities.map((resp, index) => (
-              <li key={index} className="text-sm">
-                {resp}
-              </li>
-            ))}
-          </ul>
+          <div className="text-sm my-2">
+            {/* Render responsibilities as HTML */}
+            <div
+              dangerouslySetInnerHTML={{ __html: e?.responsibilities }}
+            />
+          </div>
         </div>
       ))}
     </div>

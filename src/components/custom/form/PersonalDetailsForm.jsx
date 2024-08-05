@@ -19,7 +19,7 @@ const PersonalDetailsForm = ({ resumeInfo, setResumeInfo }) => {
 
     savePersonalDetails(params?.id, data)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         setLoading(false);
         toast.success("Personal Details Added");
       })

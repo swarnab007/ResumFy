@@ -53,7 +53,12 @@ const ResumeForm = () => {
           <AboutForm resumeInfo={resumeInfo} setResumeInfo={setResumeInfo} />
         )}
         {/* Experience form */}
-        {index === 3 && <ExperienceForm />}
+        {index === 3 && (
+          <ExperienceForm
+            resumeInfo={resumeInfo}
+            setResumeInfo={setResumeInfo}
+          />
+        )}
         {/* Education Form */}
         {index === 4 && <EducationForm />}
         {/* Skills Form */}
